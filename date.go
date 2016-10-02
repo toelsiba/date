@@ -56,6 +56,10 @@ func (d Date) AddDays(ndays int) Date {
 	return FromJulianDay(d.jd + ndays)
 }
 
+func (d Date) Equal(p Date) bool {
+	return d.jd == p.jd
+}
+
 func (d Date) String() string {
 	return d.Format("2006-01-02")
 }
