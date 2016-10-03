@@ -3,6 +3,13 @@ Package for work with date in golang
 
 Partly is an analog Qt QDate Class.
 
+## Features:
+  * dates before or equal 4 October 1582 considered by Julian calendar.
+  * dates equal or after 15 October 1582 considered by Gregorian calendar.
+  * dates more than 4 October and less 15 October 1582 year is invalid (error: date.ErrPassage).
+  * year zero is invalid (if try call function FromDate(0, month, day) then return error ErrZeroYear).
+  * dates represented as the Julian day (first Julian day (jd = 0) is 1 January -4713 year), dates less first JD is invalid.
+
 ## Installation
 ```bash
 go get github.com/toelsiba/date
